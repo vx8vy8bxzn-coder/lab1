@@ -1,0 +1,1 @@
+git shortlog -sn > commits_report.txt
