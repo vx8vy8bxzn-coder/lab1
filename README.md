@@ -1,103 +1,36 @@
-# Лабораторная работа №1: система контроля версий Git
+Имя: Лукьянова Юлия Владимировна
+Группа: 221341
+Вариант: 9
+Лабораторная №1
 
-**Лукьянова Юлия Владимировна, группа 221341, вариант 9, лабораторная №1**
+Я установила Git и настроила имя и email:
 
-## Задания варианта 9
-
-### Средняя сложность
-
-1. Задание №1 — установить Git и настроить имя и email.
-2. Задание №9 — отправить изменения на GitHub.
-3. Задание №6 — слить ветку `feature` с основной веткой.
-
-### Повышенная сложность
-
-1. Задание №9 — сформировать отчёт о коммитах с `git shortlog`.
-2. Задание №2 — настроить SSH-ключ и подключить его к GitHub.
-
-## Выполнение заданий средней сложности
-
-### Задание №1. Настройка Git
-
-Для репозитория настроены имя и email автора:
-
-```console
-$ git config user.name
+```text
 Лукьянова Юлия Владимировна
-$ git config user.email
 89534171567yla@gmail.com
 ```
 
-Файл [`.mailmap`](.mailmap) объединяет прежние варианты подписи автора из веб-коммитов GitHub под одним полным именем в отчёте `shortlog`.
+Для задания со слиянием я создала ветку `feature` и сделала в ней отдельный коммит с файлом `feature.txt`. Потом переключилась на `main` и слила ветки через `git merge --no-ff feature`. Вот кусочек графа, где видно оба коммита:
 
-### Задание №9. Публикация на GitHub
+```text
+*   5288758 слила ветку feature с main
+|\
+| * 7af057a добавила файл в ветке feature
+|/
+```
 
-Репозиторий опубликован по адресу:
+Ветку `feature` я не удаляла, она тоже запушена на GitHub. Все ветки и теги отправила командами:
 
-<https://github.com/vx8vy8bxzn-coder/lab1>
-
-Для публикации всех веток и тегов используются команды:
-
-```console
+```bash
 git push --all
 git push --tags
 ```
 
-### Задание №6. Слияние ветки `feature`
-
-В ветке `feature` отдельным коммитом добавлен файл [`feature.txt`](feature.txt). Затем ветка слита в `main` с обязательным merge-коммитом:
-
-```console
-git switch feature
-git add feature.txt
-git commit -m "feat: add feature branch artifact"
-git switch main
-git merge --no-ff feature -m "feat: merge feature branch into main"
-```
-
-Фрагмент графа коммитов:
+Для повышенного задания я настроила SSH-ключ и подключила его к GitHub. Вот реальный вывод проверки:
 
 ```text
-*   0276a72 feat: merge feature branch into main
-|\
-| * b338aee feat: add feature branch artifact
-|/
-* 96f592a добавила описание последнего задания с shortlog
-```
-
-Ветка `feature` сохранена и опубликована на GitHub.
-
-## Выполнение заданий повышенной сложности
-
-### Задание №9. Отчёт `git shortlog`
-
-Исполняемый скрипт [`shortlog.sh`](shortlog.sh) формирует отчёт по истории текущей ветки:
-
-```bash
-git shortlog -sn HEAD > commits_report.txt
-```
-
-Результат сохранён в файле [`commits_report.txt`](commits_report.txt).
-
-### Задание №2. SSH-ключ и подключение к GitHub
-
-Для аккаунта `vx8vy8bxzn-coder` настроен ключ ED25519. Отпечаток публичного ключа:
-
-```text
-SHA256:QzT2QyZ5TPTYUkM39THu79Jx3OqbML1kZwhtdqMgMtc
-```
-
-Удалённый репозиторий использует SSH-адрес:
-
-```console
-$ git remote -v
-origin  git@github.com:vx8vy8bxzn-coder/lab1.git (fetch)
-origin  git@github.com:vx8vy8bxzn-coder/lab1.git (push)
-```
-
-Проверка успешной аутентификации:
-
-```console
 $ ssh -T git@github.com
 Hi vx8vy8bxzn-coder! You've successfully authenticated, but GitHub does not provide shell access.
 ```
+
+И ещё я сделала задание с `git shortlog`. Добавила скрипт `shortlog.sh`, который создаёт файл `commits_report.txt` с автором и количеством коммитов. Чтобы старые коммиты через сайт не считались другим автором, ещё добавила `.mailmap`.
