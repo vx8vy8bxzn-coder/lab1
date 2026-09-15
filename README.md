@@ -10,9 +10,7 @@
 
 А потом я отправила изменения в гитхаб через git push и была такова
 
-Я настроила SSH ключ и отправила изменения через него, вот что выдает git remote -V
-$ git remote -v
-origin  git@github.com:vx8vy8bxzn-coder/lab1.git (fetch)
-origin  git@github.com:vx8vy8bxzn-coder/lab1.git (push)
+Я настроила SSH ключ и отправила изменения через него, вот что выдает $ ssh -T git@github.com
+Hi vx8vy8bxzn-coder! You've successfully authenticated, but GitHub does not provide shell access.
 
-Для задания с shortlog я добавила скрипт shortlog.sh и запустила его командой "bash shortlog.sh", оно создало файл commits_reports.txt с коммитерами и количеством коммитом (я еще добавила отчество к своему имени на всякий случай, так что там сначала мои ФИ бе отчества)
+Для задания с shortlog я добавила скрипт shortlog.sh и запустила его командой "bash shortlog.sh", оно создало файл commits_reports.txt с коммитерами и количеством коммитов (я еще добавила отчество к своему имени на всякий случай, так что там сначала мои ФИ без отчества)
