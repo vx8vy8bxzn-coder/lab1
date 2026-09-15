@@ -8,3 +8,10 @@
 Я создала ветку feature, создала там простой файл 'текстовый файл с фичей' где написано ФИЧА, потом я слила ветку с главной
 
 А потом я отправила изменения в гитхаб через git push и была такова
+
+Я настроила SSH ключ и отправила изменения через него, вот что выдает git remote -V
+$ git remote -v
+origin  git@github.com:vx8vy8bxzn-coder/lab1.git (fetch)
+origin  git@github.com:vx8vy8bxzn-coder/lab1.git (push)
+
+
