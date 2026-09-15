@@ -14,4 +14,4 @@ $ git remote -v
 origin  git@github.com:vx8vy8bxzn-coder/lab1.git (fetch)
 origin  git@github.com:vx8vy8bxzn-coder/lab1.git (push)
 
-
+Для задания с shortlog я добавила скрипт shortlog.sh и запустила его командой "bash shortlog.sh", оно создало файл commits_reports.txt с коммитерами и количеством коммитом (я еще добавила отчество к своему имени на всякий случай, так что там сначала мои ФИ бе отчества)
